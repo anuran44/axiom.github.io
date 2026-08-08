@@ -3,176 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axiom | Neuro-Symbolic Inference Engine</title>
+    <title>Axiom | Neuro-Symbolic Engine</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
-
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at 50% 0%, #3a1c00 0%, #050200 100%);
-            color: #FDF4E3;
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-            padding: 40px 20px;
+            box-sizing: border-box;
         }
-
-        .container {
-            max-width: 900px;
-            padding: 40px;
-            text-align: center;
-            background: rgba(20, 10, 0, 0.6);
-            border: 1px solid rgba(255, 140, 0, 0.2);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0A0600; /* Matches the deep amber theme */
         }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            background: -webkit-linear-gradient(#FFB700, #FF5E00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            margin-top: 0;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #FFDBA6;
-            margin-bottom: 40px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #d1d5db;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .architecture-box {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 140, 0, 0.2);
-            gap: 20px;
-        }
-
-        .arch-item {
-            flex: 1;
-            padding: 0 10px;
-        }
-
-        .arch-item h4 {
-            color: #FF8C00;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        /* Futuristic Terminal Styling */
-        .terminal-box {
-            background: #0a0600;
-            border: 1px solid rgba(255, 140, 0, 0.4);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 40px auto 30px;
-            text-align: left;
-            max-width: 700px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 5px 15px rgba(255,140,0,0.1);
-        }
-
-        .terminal-header {
-            color: #FF8C00;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed rgba(255, 140, 0, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .terminal-code {
-            font-family: 'Fira Code', monospace;
-            color: #FFDBA6;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .terminal-comment {
-            color: #8b7355;
-        }
-
-        .btn-glow {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-decoration: none;
-            background: rgba(20, 10, 0, 0.8);
-            border: 2px solid #FF8C00;
-            border-radius: 30px;
-            box-shadow: 0 0 15px rgba(255, 140, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .btn-glow:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #FF8C00 0%, #E65C00 100%);
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
-            border: 2px solid transparent;
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>🔥 AXIOM</h1>
-        <h3>100% Deterministic Mathematical Precision.</h3>
-
-        <p>Standard Large Language Models rely on probabilistic token prediction, leading to arithmetic hallucinations when solving complex calculus. <strong>Axiom</strong> solves this by implementing a custom Neuro-Symbolic Dual-System Architecture.</p>
-
-        <p>Constructed from scratch without pre-trained dependencies, Axiom combines the intuitive pattern-matching of a PyTorch Neural Network with the flawless precision of a deterministic SymPy algebraic solver.</p>
-
-        <div class="architecture-box">
-            <div class="arch-item">
-                <h4>System 1: Neural Intuition</h4>
-                <p style="text-align: center; font-size: 0.95rem;">A custom Seq2Seq PyTorch Transformer processes human input and classifies the structural pattern.</p>
-            </div>
-            <div class="arch-item">
-                <h4>System 2: Formal Verification</h4>
-                <p style="text-align: center; font-size: 0.95rem;">A SymPy Kernel executes integration step-by-step and back-propagates to mathematically prove accuracy.</p>
-            </div>
-        </div>
-
-        <div class="terminal-box">
-            <div class="terminal-header">Local Deployment Initialization</div>
-            <pre class="terminal-code">
-<span class="terminal-comment"># 1. Pull the public Docker container</span>
-docker pull yourusername/axiom-engine:latest
-
-<span class="terminal-comment"># 2. Launch the inference engine on localhost</span>
-docker run -p 8501:8501 yourusername/axiom-engine:latest
-
-<span class="terminal-comment"># 3. Access the UI in your browser</span>
-<span style="color: #FF8C00;">http://localhost:8501</span></pre>
-        </div>
-
-        <!-- UPDATE THIS LINK TO YOUR GITLAB REPOSITORY -->
-        <a href="https://gitlab.com/ab-group472232/axiom-engine" target="_blank" class="btn-glow">VIEW SOURCE CODE ON GITLAB</a>
-    </div>
-
+    <!-- Live Streamlit Engine embedded perfectly -->
+    <iframe 
+        src="https://axiomappio.streamlit.app/?embed=true" 
+        allow="camera; microphone; clipboard-read; clipboard-write;"
+    ></iframe>
 </body>
 </html>
