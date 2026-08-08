@@ -1,0 +1,15 @@
+# .gitlab-ci.yml
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    # Create the public folder required by GitLab Pages
+    - mkdir public
+    # Copy ONLY the landing page to the public web folder to keep the deployment fast
+    - cp index.html public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    # Only trigger the website build when you push to the main branch
+    - if: $CI_COMMIT_BRANCH == "main"
